@@ -51,6 +51,8 @@ export class GifsService {
     this.searchTag( this._tagsHistory[0] );
   }
 
+
+  // Search for gifs
   searchTag( tag: string ): void {
     if( tag.length === 0 ) return;
 
@@ -58,7 +60,7 @@ export class GifsService {
 
     const params = new HttpParams()
     .set( 'api_key', this.apiKey )
-    .set( 'limit', 10 )
+    .set( 'limit', 12 )
     .set( 'q', tag );
 
     this.http.get <SearchResponse> (`${ this.serviceUrl }/search`, { params })
@@ -66,7 +68,6 @@ export class GifsService {
 
       this.gifsList = resp.data;
     });
-
 
   }
 

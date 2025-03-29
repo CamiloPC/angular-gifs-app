@@ -20,4 +20,9 @@ export class CardComponent implements OnInit {
     }
   }
 
+  //Show "No title" if the title is empty, null or has only spaces
+  getGifTitle(title: string | null | undefined): string {
+    return title && title.trim() !== "" ? title : "No title";
+  }
+
 }

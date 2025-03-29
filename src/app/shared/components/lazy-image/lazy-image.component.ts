@@ -8,6 +8,7 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
     CommonModule,
   ],
   templateUrl: './lazy-image.component.html',
+  styleUrl: './lazy-image.component.css',
 })
 export class LazyImageComponent implements OnInit {
 
@@ -16,7 +17,6 @@ export class LazyImageComponent implements OnInit {
 
   @Input()
   public alt: string = "";
-
 
   public hasLoaded: boolean = false;
 
@@ -34,4 +34,4 @@ export class LazyImageComponent implements OnInit {
     }, 1000);
   }
 
- }
+}

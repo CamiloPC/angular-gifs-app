@@ -1,6 +1,10 @@
 <div class="bg-dark border-right p-3" id="sidebar">
-  <h3 class="text-light">GifsApp</h3>
+  <h3 class="text-light">GifsApp <i class="ti ti-gif"></i></h3>
   <hr class="text-white">
+
+  @if (tags.length > 0) {
+    <p class="text-light">Historial de búsqueda:</p>
+  }
 
   <div class="list-group list-reset">
     @for (tag of tags; track $index) {
@@ -8,7 +12,6 @@
         {{ tag | titlecase }}
       </button>
     }
-
   </div>
 
 </div>
