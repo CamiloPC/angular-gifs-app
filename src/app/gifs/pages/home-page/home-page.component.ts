@@ -31,8 +31,4 @@ export class HomePageComponent {
   get latestTag(): string {
     return this.tagsHistory.length > 0 ? this.tagsHistory[0] : '';
   }
-
-  printTagsHistory() {
-    console.log(this.gifsService.tagsHistory);
-  }
 }
