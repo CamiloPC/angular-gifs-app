@@ -11,11 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class SidebarComponent {
 
-
-  constructor ( private gifsService: GifsService ) {
-
-  }
-
+  constructor ( private gifsService: GifsService ) {}
 
   get tags() {
     return this.gifsService.tagsHistory;
@@ -23,5 +19,8 @@ export class SidebarComponent {
 
   searchTag ( tag: string ): void {
     this.gifsService.searchTag( tag );
+
+    console.log(this.gifsService.tagsHistory);
+    console.log(this.gifsService.tagsHistory[0])
   }
 }

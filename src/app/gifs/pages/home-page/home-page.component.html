@@ -4,15 +4,20 @@
     <gifs-search-box></gifs-search-box>
   </div>
 
-  @if (!(gifs.length > 0)) {
+  @if (!(tagsHistory.length > 0)) {
     <div class="mt-3 col-6 offset-3 text-center">
-      <h6>No se han encontrado resultados con ese criterio de búsqueda</h6>
+      <h6>¡Bienvenido! Inserte un criterio de búsqueda para obtener Gifs relacionados</h6>
+    </div>
+  }@else if (!(gifs.length > 0)) {
+    <div class="mt-3 col-6 offset-3 text-center">
+      <h6>No se han encontrado resultados con el criterio de búsqueda "{{ latestTag }}"</h6>
       <h6>🚫</h6>
+    </div>
+  }@else {
+    <div class="col-12 pt-2">
+      <!-- Listado de Gifs -->
+      <gifs-card-list [gifs] = "gifs"></gifs-card-list>
     </div>
   }
 
-  <div class="col-12 pt-2">
-    <!-- Listado de Gifs -->
-    <gifs-card-list [gifs] = "gifs"></gifs-card-list>
-  </div>
 </div>

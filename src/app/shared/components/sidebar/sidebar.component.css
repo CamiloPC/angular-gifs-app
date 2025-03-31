@@ -13,3 +13,17 @@
     position: relative;
   }
 }
+
+.tag-button {
+  word-wrap: break-word;
+  white-space: normal;
+  text-align: center;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .tag-button {
+    max-width: 100px;
+  }
+}
