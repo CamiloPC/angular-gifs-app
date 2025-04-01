@@ -13,14 +13,12 @@ export class CardComponent implements OnInit {
   @Input()
   public gif!: Gif;
 
-
   ngOnInit(): void {
     if( !this.gif ){
       throw new Error('Gif property is required');
     }
   }
 
-  //Show "No title" if the title is empty, null or has only spaces
   getGifTitle(title: string | null | undefined): string {
     return title && title.trim() !== "" ? title : "No title";
   }

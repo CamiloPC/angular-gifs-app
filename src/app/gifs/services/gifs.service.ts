@@ -7,6 +7,7 @@ import { Observable, of } from 'rxjs';
 export class GifsService {
 
   public gifsList: Gif[] = [];
+  private exampleGifs: Gif[] = [];
 
   private _tagsHistory: string[] = [];
   private apiKey: string = 'F1aUXoEXCDunuG1aPjNYkTKuQ3PGRZ8m';
@@ -15,6 +16,8 @@ export class GifsService {
   constructor( private http: HttpClient ) {
     this.loadLocalStorage();
     console.log("Gifs Service Ready");
+
+    this.loadExampleGifs();
    }
 
 
@@ -71,6 +74,16 @@ export class GifsService {
       this.gifsList = resp.data;
     });
 
+  }
+
+  private loadExampleGifs(): void {
+    this.http.get<Gif[]>('assets/data/example-gifs.json').subscribe((gifs) => {
+      this.exampleGifs = gifs;
+    });
+  }
+
+  get exampleGifsList(): Gif[] {
+    return this.exampleGifs;
   }
 
 }

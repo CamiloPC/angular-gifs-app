@@ -5,8 +5,12 @@
   </div>
 
   @if (!(tagsHistory.length > 0)) {
-    <div class="mt-3 col-6 offset-3 text-center">
-      <h6>¡Bienvenido! Inserte un criterio de búsqueda para obtener Gifs relacionados</h6>
+    <div class="mt-3 mb-3 col-6 offset-3 text-center">
+      <h5>¡Bienvenido! Inserte un criterio de búsqueda para encontrar Gifs relacionados</h5>
+    </div>
+    <div class="col-12 pt-2">
+      <!-- Listado de Gifs -->
+      <gifs-card-list [gifs] = "exampleGifs"></gifs-card-list>
     </div>
   }@else if (!(gifs.length > 0)) {
     <div class="mt-3 col-6 offset-3 text-center">

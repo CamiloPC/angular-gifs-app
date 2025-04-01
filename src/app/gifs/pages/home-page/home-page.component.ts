@@ -20,6 +20,10 @@ export class HomePageComponent {
 
   constructor ( private gifsService: GifsService ) {}
 
+  get exampleGifs() {
+    return this.gifsService.exampleGifsList;
+  }
+
   get tagsHistory() {
     return this.gifsService.tagsHistory;
   }
